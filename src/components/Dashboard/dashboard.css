@@ -1,0 +1,29 @@
+.brd_cumb {padding:0 15px;position: relative;background: #fff;min-height: 40px;line-height: 39px;
+display: block;z-index: 1;    box-shadow: 2px 0px 4px 0 rgb(0 0 0 / 12%);;}
+.brd_cumb ul {float:left; display:inline-block;}
+.brd_cumb ul li { float:left; display:inline-block; color:#000; }
+.brd_cumb ul li a {color:#8b8b8b; text-decoration: none;}
+.brd_cumb ul li a:hover {color:#0385c3;}
+
+.dashboard .box {
+    min-height: 100px;
+    text-align: center;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 10px;
+    cursor: pointer;
+}
+.dashboard h2 {
+    font-size: 38px;
+    font-weight: 400;
+    color: #383858;
+}
+.dashboard p {
+    text-transform: uppercase;
+    color: #6d6d6d;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}

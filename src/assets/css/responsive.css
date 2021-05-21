@@ -1,0 +1,1215 @@
+@media screen and (min-width: 1440px) {
+    .add-domain-group-pop {
+        width: 335px;
+    }
+    .dashboard-page .figure-content svg {
+        height: 150px;
+    }
+    .dashboard-page .copyright {
+        width: 95%;
+    }
+    .dashboard-page .trust-box .scroe-circle {
+        float: left;
+    }
+    .dashboard-page .protect-box .circle-chart,
+    .dashboard-page .threat-box .circle-chart {
+        justify-content: flex-end;
+    }
+    .dashboard-page .chart_wrap {
+        margin-right: 10px;
+    }
+    .dashboard-page .left-panel .col.threat ul {
+        padding-left: 35px;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 86%;
+    }
+    .dashboard-page .message-box .box-tab ul li {
+        padding: 17px 10px 17px 10px;
+    }
+    .dashboard-page .calender-fld .fld.drp_fld {
+        width: 170px;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    .login-panel .right-panel .inner-area img {
+        width: 80%;
+        bottom: 79px;
+    }
+    .login-panel .login-box .logo {
+        margin: 0 0 12px 0;
+        height: 70px;
+    }
+    .dashboard-page .dounut-text-wrap.cText {
+        left: 37px;
+    }
+    .dashboard-page .threat .dounut-text-wrap.cText {
+        left: 38px;
+    }
+    .dashboard-page .dounut-text-wrap.cText.threatSender {
+        left: 124px;
+        top: 83px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .login-panel .login-box.register-box {
+        display: inherit;
+        width: 80%;
+        margin: inherit;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .login-panel .right-panel .inner-area img {
+        width: 72%;
+        bottom: 92px;
+    }
+    .dashboard-page .copyright {
+        width: 94%;
+    }
+    .dashboard-page .trust-box .scroe-circle {
+        float: left;
+    }
+    .dashboard-page .dounut-text-wrap.cText {
+        left: 47px;
+    }
+    .dashboard-page .threat .dounut-text-wrap.cText {
+        left: 48px;
+    }
+    .dashboard-page .dounut-text-wrap.cText.threatSender {
+        left: 144px;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 88%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .dashboard-page .trust-box .scroe-circle {
+        float: left;
+    }
+    .dashboard-page .protect-box .circle-chart,
+    .dashboard-page .threat-box .circle-chart {
+        justify-content: flex-end;
+    }
+    .dashboard-page .left-panel .col.threat ul {
+        padding-left: 65px;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 91%;
+    }
+    .login-panel .login-box.register-box {
+        display: inherit;
+        width: 80%;
+        margin: inherit;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .login-panel .right-panel .inner-area img {
+        width: 72%;
+        bottom: 92px;
+    }
+    .dashboard-main-body .col-3 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    .dashboard-main-body .col-6 {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .dashboard-page .message-box .highcharts-container svg {
+        margin: -51px 0 0 -38px;
+    }
+    .dashboard-page .dounut-text-wrap.cText {
+        left: 45px;
+    }
+    .dashboard-page .threat .dounut-text-wrap.cText {
+        left: 46px;
+    }
+    .dashboard-page .dounut-text-wrap.cText.threatSender {
+        left: 143px;
+    }
+    .details-sheet .col {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    
+.profile-body .right-panel {
+    flex: 0 0 68%;
+    max-width: 68%;
+}
+
+.fileupload-body .process-file-list ul li .file-info {
+    width: 84%;
+}
+}
+
+@media screen and (max-width: 1170px) {
+    .login-panel .login-box {
+        width: 75%;
+    }
+    .login-panel .login-box.register-box {
+        width: 88%;
+    }
+    .login-panel .login-box.register-box .login-form-box .row:nth-child(4) .col:nth-child(2) {
+        margin-top: 21px;
+    }
+    .dashboard-summary-view .summary-box .thread-list .progress-bar-wrap .progress {
+        float: left;
+        width: 65%;
+    }
+    .dashboard-page .message-box .box-tab ul {
+        padding: 0 10px;
+    }
+    .dashboard-page .message-box .box-tab ul li {
+        padding: 15px 5px 12px 5px;
+    }
+    .dashboard-page .message-box .box-tab ul li .current-status {
+        margin: 4px 0 0 0;
+    }
+    .dashboard-page figure {
+        width: 78%;
+    }
+    .dashboard-page .protect-box .col,
+    .dashboard-page .threat-box .col {
+        max-width: 50%;
+    }
+    .dashboard-page .protect-box .chart_wrap .cText {
+        height: 88px;
+    }
+    .dashboard-page .protect-box .chart_wrap {
+        height: 88px;
+        margin-top: 27px;
+    }
+    .dashboard-page .trust-box .col-7:first-child {
+        padding-right: 0;
+    }
+    .dashboard-page .message-box .highcharts-container svg {
+        width: 110%;
+        height: 113%;
+        margin: -51px 0 0 2px;
+    }
+    .profile-body .right-panel {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+
+.fileupload-body .process-file-list ul li .file-info {
+    width: 82%;
+}
+}
+
+@media screen and (max-width: 1024px) {
+    .login-panel .register-box {
+        width: 90%;
+    }
+    .login-panel .register-box .fld-row label {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .fileupload-body .browse-box .upload-icon img {
+        width: 63%;
+    }
+    .add-domain-list.listing-box .listing-row .list-col:nth-child(1) {
+        width: 50%;
+    }
+    .listing-box .list-col .edit-row-fld .fld {
+        width: 100%;
+    }
+    .dashboard-page .dashboard-main-body {
+        padding: 80px 20px 10px 20px;
+    }
+    .dashboard-page .heading-bar {
+        padding: 16px 20px;
+    }
+    .dashboard-page .dashboard-main-body .col-3:first-child {
+        padding-right: 15px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .dashboard-page .left-panel .col {
+        flex-basis: 0;
+    }
+    .dashboard-page .protect-box .chart_wrap {
+        margin-top: 0;
+        height: 104px;
+    }
+    .dashboard-page .protect-box .chart_wrap .cText {
+        height: 104px;
+    }
+    .dashboard-page .trust-box {
+        height: 92%;
+    }
+    .dashboard-page .trust-box .row {
+        height: 100%;
+    }
+    .dashboard-page .trust-box .data p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .dashboard-page .col-6 {
+        padding-left: 15px;
+        padding-right: 6px;
+        flex: 0 0 66.6666%;
+        max-width: 67%;
+    }
+    .dashboard-page .dashboard-main-body .col-3:last-child {
+        padding-left: 5px;
+        flex: 0 0 33%;
+        max-width: 33.3333%;
+    }
+    .dashboard-page .figure-content svg {
+        height: 150px;
+    }
+    .dashboard-page .left-panel .col:first-child {
+        padding-right: 5px;
+    }
+    .dashboard-page .left-panel .col:nth-child(2) {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .dashboard-page .left-panel .col:last-child {
+        padding-left: 5px;
+    }
+    .dashboard-page .box {
+        margin-bottom: 15px;
+    }
+    .dashboard-page .country-box {
+        height: auto;
+    }
+    .profile-body .right-panel {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+.fileupload-body .process-file-list ul li .file-info {
+    width: 79%;
+}
+}
+
+@media screen and (max-width: 991px) {
+    .col-6 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    .login-panel .login-box {
+        width: 80%;
+    }
+    .login-panel .login-box .logo img {
+        width: 80%;
+    }
+    .login-panel .login-box.register-box {
+        width: 95%;
+    }
+    .login-panel .register-box .logo img {
+        width: 55%;
+    }
+    .fileupload-body .process-file-list ul li {
+        padding: 8px 12px;
+    }
+    .fileupload-body .processing-box .box-heading {
+        padding: 20px 13px 20px 15px;
+    }
+    .fileupload-body .processing-box .box-heading .action-icon img {
+        width: 22px;
+    }
+    .fileupload-body .processing-box .box-heading .loading-icon {
+        margin: 0px 0 0 10px;
+        width: 21px;
+    }
+    .fileupload-body .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .fileupload-body .drop-inside-box {
+        margin: 0 0 25px 0;
+    }
+    .dashboard-summary-view .risk-bar .icon {
+        width: 45px;
+        height: 45px;
+        background-size: 40px;
+    }
+    .dashboard-summary-view .risk-bar {
+        padding: 4px 9px 3px 4px;
+    }
+    .dashboard-summary-view .risk-bar .count {
+        font-size: 30px;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li .col:first-child {
+        width: 20%;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li .col:nth-child(4) {
+        width: 23%;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 92%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .login-panel .right-panel,
+    .login-panel .left-panel {
+        width: 50%;
+    }
+    .login-panel .login-box.register-box .login-form-box .row:nth-child(4) .col:nth-child(2) {
+        margin-top: auto
+    }
+    .login-panel .login-box .logo img {
+        width: 70%;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 28px;
+    }
+    .login-panel .login-box.register-box {
+        margin: 20px 0 0 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .login-panel .login-box.register-box::-webkit-scrollbar {
+        width: 5px;
+    }
+    .login-panel .login-box.register-box::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .login-panel .login-box.register-box .logo img {
+        width: 60%;
+    }
+    .login-panel .register-box .logo {
+        margin: 0 0 10px 0;
+    }
+    .login-panel .register-box .col {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        flex-basis: auto;
+    }
+    .login-panel .register-box .copyright {
+        position: static;
+        margin: 52px 0 20px 0;
+    }
+    .listing-box .action-row .fld.icon-fld {
+        width: 250px;
+    }
+    .listing-box .list-col .edit-row-fld .fld {
+        width: 100%;
+    }
+    .fileupload-body .processing-box .box-heading .action-icon img {
+        width: 25px;
+    }
+    .note-row p .icon {
+        width: 30px;
+        height: 30px;
+    }
+    .listing-box.add-domain-list .action-row .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .listing-box.add-domain-list .action-row .icon-trash {
+        margin: 0px 13px -2px 5px;
+        background-color: var(--btnBgColor);
+    }
+    .add-domain-list.listing-box .listing-row .list-col:nth-child(1) {
+        width: 44%;
+    }
+    .listing-box .list-col .icon.icon-edit {
+        width: 20px;
+        height: 20px;
+    }
+    .listing-box .action-row .fld-group,
+    .listing-box .action-row .fld.icon-fld {
+        width: 100%;
+    }
+    .domain-group-list .add-domain-group-pop {
+        width: 308px;
+    }
+    .header-bar .action-bar ul li {
+        padding: 0 7px;
+    }
+    .header-bar .action-bar ul li:last-child {
+        width: 60px;
+        padding-right: 7px;
+    }
+    .header-bar .action-bar ul li.action {
+        padding: 2px 9px;
+    }
+    .header-bar .logo {
+        width: 190px;
+    }
+    .header-bar .logo img {
+        width: 80%;
+    }
+    .sideTopMenu:after,
+    .sideTopMenu:before {
+        left: 100%;
+    }
+    .dashboard-page .heading-bar .col:first-child {
+        max-width: 20%;
+        padding-right: 0;
+    }
+    .dashboard-page .heading-bar .col:nth-child(2) {
+        max-width: 37%;
+    }
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 44%;
+    }
+    .dashboard-summary-view .risk-bar .left h5 {
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .calender-fld .dropdown-menu .select span {
+        white-space: nowrap;
+        width: 65px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li.header {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .header-bar .action-bar ul li:nth-child(2),
+    .header-bar .action-bar ul li:nth-child(3),
+    .header-bar .action-bar ul li:nth-child(4) {
+        display: none;
+    }
+    .sideTopMenu ul li:nth-child(2),
+    .sideTopMenu ul li:nth-child(3),
+    .sideTopMenu ul li:nth-child(4) {
+        display: block!important;
+    }
+    .calender-fld .fld.drp_fld {
+        width: 80px;
+        padding: 0px 2px;
+        height: 30px;
+        z-index: 4;
+        background: #fff;
+    }
+    .dashboard-summary-view .risk-bar .icon {
+        background-size: 34px;
+    }
+    .dashboard-summary-view .summary-box .thread-list .progress-circle {
+        padding-left: 0;
+    }
+    .dashboard-page .trust-box .data p.subtxt span {
+        display: block;
+        padding-left: 0;
+    }
+    .dashboard-page .protect-box .chart_wrap {
+        margin: 5px 7px 0 0;
+        height: 97px;
+    }
+    .dashboard-page .protect-box .chart_wrap .cText {
+        height: 97px;
+    }
+    .dashboard-page .col-6 {
+        padding-right: 15px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .dashboard-page .dashboard-main-body .col-3:last-child {
+        padding-left: 15px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .calender-fld .dropdown-menu .small-pop-menu {
+        margin: 2px 0 0 -6px !important;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 86.5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .note-row {
+        display: block;
+    }
+    .note-row p.note {
+        line-height: 16px;
+        margin: 0 0 8px 0;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .dashboard-page .heading-bar .row {
+        flex-wrap: nowrap;
+    }
+    .dashboard-page .heading-bar .col:first-child {
+        max-width: 50%;
+    }
+    .dashboard-page .heading-bar .col:nth-child(2) {
+        max-width: 50%;
+    }
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 43%;
+    }
+    .dashboard-summary-view .risk-bar .left {
+        width: 100%;
+    }
+    .dashboard-summary-view .risk-bar .icon {
+        background-size: 35px;
+    }
+    .dashboard-page .protect-box .chart_wrap .cText {
+        height: 91px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .main-container {
+        padding: 20px 20px 30px 20px;
+    }
+    .main-work-area {
+        padding-left: 0;
+    }
+    .dashboard-page .heading-bar {
+        width: 100%;
+    }
+    .side-nav-strip-bar {
+        display: none;
+    }
+    .listing-box .action-row .fld.icon-fld {
+        width: 100%;
+    }
+    .listing-box .action-row .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+    .listing-box .action-row .default-btn {
+        font-size: 12px;
+    }
+    .listing-box .action-row .icon {
+        background-size: 20px;
+    }
+    .listing-box .list-col .edit-row-fld .fld {
+        width: auto;
+    }
+    .listing-box .listing-row.sub-row {
+        padding-left: 80px;
+    }
+    .login-panel .left-panel,
+    .login-panel .right-panel {
+        width: 50%;
+    }
+    .login-panel .login-box {
+        width: 90%;
+    }
+    .login-panel .right-panel .inner-area h3 {
+        font-size: 20px;
+        color: #fff;
+        font-weight: 300;
+        line-height: 24px;
+        margin: 5px 0 0 0;
+    }
+    .listing-box .res-box,
+    .summary-box .res-box {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+    }
+    .listing-box .res-box .listing-row,
+    .summary-box .res-box .list.thread-list {
+        width: 800px;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li .col:first-child {
+        width: 21%;
+    }
+    .add-domain-list .pop-menu,
+    .domain-group-list .pop-menu {
+        right: 0;
+        top: 36px;
+    }
+    .domain-group-list .listing-box .action-row .icon-trash {
+        margin: -2px 13px -2px 5px;
+    }
+    .dashboard-container {
+        padding: 0!important;
+    }
+    .sideTopMenu ul li .icon.icon-menu-logout {
+        width: 20px !important;
+        height: 21px !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .listing-box .action-row {
+        padding: 10px 8px;
+    }
+    .fld {
+        font-size: 13px;
+    }
+    .fld-group .icon {
+        margin: 3px;
+        width: 29px;
+        height: 29px;
+        padding: 2px;
+    }
+    .fld-group .icon-fld {
+        padding-left: 30px;
+    }
+    .domain-page-body .domain-tab {
+        margin: 0 0 0 10px;
+    }
+    .header-row.listing-row {
+        height: 32px !important;
+    }
+    .listing-box .listing-row {
+        height: 40px;
+    }
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 39%;
+        padding-left: 0px;
+    }
+    .dashboard-page .box {
+        padding: 10px 8px 10px 10px;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard-page .heading-bar {
+        padding: 16px 15px;
+    }
+    .dashboard-page .heading-bar .col:first-child {
+        display: none;
+    }
+    .dashboard-page .heading-bar .col:nth-child(2) {
+        max-width: 42%;
+    }
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 58%;
+    }
+    .mobile-logo {
+        display: block;
+    }
+    .desk-logo {
+        display: none;
+    }
+    .header-bar .logo {
+        width: 70px;
+        align-items: center;
+    }
+    .header-bar .logo img {
+        width: 45%;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li.header {
+        padding: 0 18px;
+    }
+    .dashboard-summary-view .summary-box .thread-list ul li {
+        padding: 7px 18px;
+    }
+    .dashboard-page .left-panel .col {
+        padding-right: 15px!important;
+        padding-left: 15px!important;
+        flex-basis: auto;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+    .dashboard-page .trust-box .data p.subtxt span {
+        display: inline-block;
+    }
+    .dashboard-page .protect-box,
+    .dashboard-page .threat-box {
+        height: auto;
+    }
+    .dashboard-page .protect-box .col,
+    .dashboard-page .threat-box .col {
+        flex-basis: 0!important;
+    }
+    .dashboard-page .protect-box .circle-chart,
+    .dashboard-page .threat-box .circle-chart {
+        justify-content: flex-end;
+    }
+    .dashboard-page .box {
+        padding: 15px;
+    }
+    .dashboard-page .protect-box .chart_wrap .cText {
+        height: 107px;
+    }
+    .dashboard-page .threat-box .threat ul li {
+        text-align: right;
+    }
+    .dashboard-page .threat-box .threat ul li h4 {
+        padding-right: 10px;
+    }
+    .dashboard-page .message-box,
+    .dashboard-page .sender-box {
+        padding: 0!important;
+        height: auto;
+    }
+    .calender-fld .fld.drp_fld {
+        width: 125px;
+    }
+    .calender-fld .dropdown-menu .select span {
+        width: 100%;
+    }
+    .dashboard-page .protect-box .chart_wrap {
+        margin: 5px -5px 0 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .main-container {
+        padding: 15px 15px 25px 15px;
+    }
+     ::-webkit-scrollbar {
+        width: 5px;
+    }
+    .main-container .heading {
+        margin: 0 0 20px 0;
+    }
+    .main-container .heading h4 {
+        font-size: 15px;
+        margin: 0 0 8px 0;
+        line-height: 18px;
+    }
+    .main-container .heading h4 .icon img {
+        width: 40%;
+    }
+    .main-container .heading h4 .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+    }
+    .listing-box .listing-row {
+        height: 38px;
+    }
+    .listing-box .list-col .edit-row-fld .fld {
+        padding: 2px 8px;
+        height: 30px;
+    }
+    .fileupload-body .box-heading h5 {
+        margin: 0 0 7px 0;
+        font-size: 15px;
+    }
+    .fileupload-body .box-heading p {
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .fileupload-body .drop-box {
+        margin: 15px 0 0 0;
+    }
+    .fileupload-body .drop-inside-box {
+        padding: 20px 20px;
+        height: auto;
+    }
+    .fileupload-body .processing-box {
+        padding: 0;
+        height: 350px;
+    }
+    .fileupload-body .drop-inside-box h5 {
+        font-size: 18px;
+        margin: 0 0 5px 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .listing-box .action-row .default-btn {
+        min-width: auto;
+        padding: 5px 9px;
+        height: auto;
+    }
+    .listing-box .action-row .default-btn .txt {
+        display: none;
+    }
+    .listing-box .action-row .default-btn .icon {
+        background-size: 25px;
+    }
+    .listing-box .list-col .edit-row-fld .fld {
+        width: 100%;
+    }
+    .login-panel {
+        position: relative;
+        overflow-y: auto;
+    }
+    .login-panel .login {
+        display: block;
+    }
+    .login-panel .left-panel {
+        width: 100%;
+        padding: 50px 50px 80px 50px;
+    }
+    .login-panel .right-panel {
+        width: 100%;
+        padding: 80px 50px;
+    }
+    .login-panel .login-box .logo img {
+        width: 55%;
+    }
+    .login-panel .copyright {
+        position: static;
+        margin: 50px 0 0 0;
+    }
+    .login-panel .login-box {
+        width: 100%;
+        margin: 0;
+    }
+    .fileupload-body .processing-box .box-heading {
+        padding: 15px 13px 15px 15px;
+    }
+    .fileupload-body .processing-box .box-heading .action-icon img {
+        width: 22px;
+    }
+    .fileupload-body .processing-box .box-heading h5 {
+        width: 50%;
+        font-size: 15px;
+    }
+    .fileupload-body .processing-box .box-heading .action-icon {
+        align-items: flex-start;
+    }
+    .fileupload-body .process-file-list ul li .file-icon {
+        margin: 0 9px 0 0;
+    }
+    .fileupload-body .process-file-list ul li .file-info .progress {
+        margin: 0px 0 0px 0;
+    }
+    .dashboard-page .heading-bar .col:nth-child(2),
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 50%;
+    }
+    .dashboard-summary-view .risk-box {
+        flex-flow: wrap;
+    }
+    .dashboard-summary-view .risk-box .info,
+    .dashboard-summary-view .risk-bar {
+        width: 50%;
+        border-bottom: solid 1px var(--listingColBorderColor);
+    }
+    .dashboard-summary-view .risk-box .info,
+    .dashboard-summary-view .risk-bar:nth-child(1) {
+        border-bottom: solid 1px var(--listingColBorderColor);
+    }
+    .dashboard-summary-view .risk-bar:nth-child(3) {
+        border-left: none;
+    }
+    .dashboard-page .dashboard-main-body {
+        padding: 80px 10px 10px 10px;
+    }
+    .dashboard-page .message-box .box-tab ul li .current-status {
+        padding-left: 0;
+    }
+    .calender-fld .fld.drp_fld {
+        width: 108px;
+    }
+}
+
+@media screen and (max-width: 504px) {
+    .note-row p .icon {
+        width: 49px;
+        height: 49px;
+    }
+    .header-bar .logo {
+        width: 60px;
+    }
+    .dashboard-summary-view .search-panel .fld-group {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-bar .action-bar ul li:first-child {
+        display: none;
+    }
+    .sideTopMenu ul li:first-child {
+        display: flex!important;
+    }
+    .header-bar .action-bar ul li:last-child {
+        border-left: none;
+    }
+    .dashboard-page .message-box .box-tab ul li h5 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .tab ul li {
+        min-width: auto;
+    }
+    .box {
+        padding: 10px 12px;
+    }
+    .login-panel .login-box .logo img {
+        width: 70%;
+    }
+    .dashboard-page .message-box .highcharts-container svg {
+        width: 109%;
+        height: 106%;
+        margin: -25px 0 0 2px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .main-container .heading {
+        margin: 0 0 12px 0;
+    }
+    .main-container .heading h4 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .main-container .heading h4 .icon {
+        width: 33px;
+        margin-right: 10px;
+    }
+    .login-panel .right-panel .inner-area {
+        width: 90%;
+    }
+    .fileupload-body .box-heading h5 {
+        margin: 0 0 7px 0;
+        font-size: 14px;
+    }
+    .fileupload-body .box-heading h5 span {
+        padding: 6px 42px 5px 11px;
+    }
+    .fileupload-body .process-file-list ul li .file-info p {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    .fileupload-body .process-file-list ul li .file-info p.note {
+        line-height: 12px;
+    }
+    .fileupload-body .process-file-list ul li .file-info .progress {
+        margin: 2px 0 3px 0;
+    }
+    .add-domain-group-pop {
+        width: 280px;
+    }
+    .header-bar .dropdown-bar .dorp-inner {
+        margin: 19px 0 0 0;
+    }
+    .header-bar .dropdown-bar h5 {
+        font-size: 17px;
+        line-height: 16px;
+    }
+    .header-bar .dropdown-bar p {
+        white-space: normal;
+        font-size: 12px;
+    }
+    .header-bar .dropdown-bar {
+        padding: 0 0 0 8px;
+        width: 210px;
+    }
+    .dashboard-page .heading-bar .row {
+        flex-wrap: wrap;
+    }
+    .dashboard-page .heading-bar .col:nth-child(2),
+    .dashboard-page .heading-bar .col:last-child {
+        max-width: 100%;
+    }
+    .calender-fld {
+        width: 96%;
+        margin: 7px 0 0 0;
+    }
+    .calender-fld .mat-form-field {
+        position: relative;
+    }
+    .header-bar .domain-header-popup {
+        width: 125.5%;
+    }
+    .dashboard-page .message-box .box-tab {
+        height: auto;
+    }
+    .dashboard-page .message-box .box-tab ul {
+        display: block;
+        padding: 0px;
+    }
+    .dashboard-page .message-box .box-tab ul li {
+        width: 100%;
+        display: flex;
+        padding: 5px 10px;
+        justify-content: space-between;
+    }
+    .dashboard-page .message-box .box-tab ul li .count {
+        display: flex;
+        align-items: center;
+    }
+    .dashboard-page .message-box .box-tab ul li h5 {
+        margin: 0 10px 0 0;
+    }
+    .dashboard-page .dashboard-main-body {
+        padding: 115px 10px 10px 10px;
+    }
+    .calender-fld .fld.drp_fld {
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header-bar .dropdown-bar {
+        width: 185px;
+    }
+    .header-bar .dropdown-bar .dorp-inner {
+        margin: 10px 0 0 0;
+    }
+    .header-bar .domain-header-popup {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main-container .heading h4 {
+        font-size: 13px;
+    }
+    .main-container .heading h4 .icon {
+        width: 38px;
+        margin-right: 5px;
+    }
+    .login-panel .left-panel {
+        padding: 50px 30px 80px 30px;
+    }
+    .login-panel .login-box .logo img {
+        width: 75%;
+    }
+    .login-panel .right-panel .inner-area {
+        width: 100%;
+    }
+    .fileupload-body .box-heading h5 span {
+        padding: 6px 42px 4px 11px;
+    }
+    .fileupload-body .box-heading p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .fileupload-body .drop-inside-box {
+        padding: 25px 10px;
+        height: auto;
+    }
+    .fileupload-body .drop-inside-box h5 {
+        font-size: 17px;
+        margin: 0 0 2px 0;
+    }
+    .fileupload-body .drop-inside-box h6 {
+        font-size: 12px;
+    }
+    .fileupload-body .browse-box .upload-icon {
+        margin: 10px 0;
+    }
+    .fileupload-body .browse-box p.note {
+        font-size: 11px;
+        color: #777;
+    }
+    .fileupload-body .processing-box .box-heading {
+        padding: 15px 8px 15px 9px;
+    }
+    .fileupload-body .processing-box .box-heading h5 {
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .fileupload-body .processing-box .box-heading .loading-icon {
+        width: 19px;
+    }
+    .fileupload-body .processing-box .box-heading .action-icon img {
+        width: 18px;
+        padding-top: 3px;
+    }
+    .fileupload-body .process-file-list ul li {
+        padding: 7px 7px;
+    }
+    .fileupload-body .process-file-list ul li .file-info {
+        width: 100%;
+    }
+    .fileupload-body .process-file-list ul li .file-info p.note {
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .header-bar .dropdown-bar {
+        width: 150px;
+    }
+    .header-bar .domain-header-popup {
+        width: 146%;
+    }
+    .dashboard-summary-view .search-panel {
+        padding: 0px 10px;
+    }
+    .dashboard-summary-view .search-panel .fld-group {
+        width: 155px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .listing-box .list-col .edit-row-fld .fld {
+        margin: 0 0 0 -10px;
+    }
+    .login-panel .left-panel {
+        padding: 50px 20px 80px 20px;
+    }
+    .login-panel .login-box .logo {
+        text-align: center;
+        margin: 0 0 25px 0;
+    }
+    .fileupload-body .process-file-list ul li .file-icon {
+        margin: 0 3px 0 0;
+    }
+    .fileupload-body .processing-box .action-icon img {
+        width: 29px;
+    }
+    .calender-fld .fld.drp_fld {
+        width: 120px;
+    }
+}
+
+
+@media screen and (min-width: 1400px),
+screen and (min-height: 900px) {
+    .login-panel .right-panel:before {
+        width: 164%;
+    }
+    .login-panel .right-panel .inner-area img {
+        right: 35px;
+        bottom: -6px;
+    }
+}
+
+@media screen and (min-width: 1600px),
+screen and (min-height: 900px) {
+    .login-panel .right-panel:before {
+        width: 160%;
+    }
+    .login-panel .right-panel .inner-area img {
+        width: 90%;
+        bottom: -20px;
+    }
+}
+
+@media screen and (min-width: 1600px),
+screen and (min-height: 1050px) {
+    .login-panel .right-panel:before {
+        width: 164%;
+    }
+    .login-panel .right-panel .inner-area img {
+        right: 10px;
+        bottom: -40px;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 1920px),
+screen and (min-height: 1080px) {
+    .login-panel .right-panel:before {
+        width: 150%;
+        height: 118%;
+    }
+}
+
+@media screen and (min-width: 1920px),
+screen and (min-height: 1200px) {
+    .login-panel .right-panel:before {
+        width: 158%;
+    }
+}

@@ -1,0 +1,54 @@
+.signup-plan {
+    border-radius:30px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* padding: 15px; */
+    padding-bottom:15px;
+}
+.signup-box {
+    display:flex;
+}
+.res-table table { width: 100%;border: 0;border-radius: 20px;}
+.res-table th {padding: 5px;/* border: solid 1px #e2e2e2; */text-align: center;}
+.res-table td {padding: 5px;border-bottom: solid 1px #e2e2e2;text-align: center;}
+.res-table th:nth-child(1), .res-table td:nth-child(1) {text-align: left;}
+.res-table tr:last-child td {border-bottom: none}
+.res-table th{
+    padding: 10px;
+    background: #233954;
+    color: #fff
+}
+.res-table th:first-child {
+    border-radius: 20px 0 0 0;
+}
+.res-table th:last-child {
+    border-radius: 0 20px 0 0;
+}
+.res-table td:first-child, .res-table th:first-child {
+    padding-left:15px;
+}
+.res-table .table-hdr {
+    border-bottom: solid 2px #e8e8e8;
+}
+.res-table .table-body {
+height: 400px;
+overflow-y: auto
+}
+
+
+.signup-plan table td:first-child {
+    width:28%;
+}
+.signup-plan table td:nth-child(2) {
+    width:17%;
+}
+.signup-plan table td:nth-child(3) {
+    width:17%;
+}
+.signup-plan table td:nth-child(4) {
+    width:17%;
+}
+.signup-plan table td:last-child {
+    width:17%;
+}

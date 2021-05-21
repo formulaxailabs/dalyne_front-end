@@ -1,0 +1,276 @@
+:root {
+    --globalFont: 'Open Sans', sans-serif;
+    --mainContainerbgColor: #fdfdfd;
+    --mainBodyWrapperbgColor: #202124;
+    --mainHeadingH4Color: #000;
+    --bgColor: #2483bb;
+    --btnBgColor: #c7982e;/* #3c454c */
+    --btnHoverBgColor: #3c454c;
+    --btnAltBgColor: #ececec;
+    --btnTextColor: #fff;
+    --btnOutlineTextColor: #89cbed;
+    --btnOutlineHoverTextColor: #3c454c;
+    --btnResetBgColor: #ececec;
+    --btnResetTextColor: #656565;
+    --btnResetHoverBgColor: #cccccc;
+    --btnResetHoverTextColor: #4e4e4e;
+    --btnGroupBgColor: #fff;
+    --btnGroupBorderColor: #ced4da;
+    --btnGroupActiveBgColor: #3c454c;
+    --btnGroupActiveBorderColor: #3c454c;
+    --btnGroupActiveTextColor: #fff;
+    --btnGroupActiveIconColor: #fff;
+    --textColor: #202124;
+    --aTagColor: #128ccb;
+    --aTagHoverColor: #3c454c;
+    --paginationATagColor: #000;
+    --paginationBorderColor: #e6e6e6;
+    --paginationActiveBgColor: #3c454c;
+    --paginationNoActiveBgColor: #f7f7f7;
+    --paginationActiveTextColor: #fff;
+    --paginationActiveBorderColor: #3c454c;
+    --aHoverTagColor: #207cab;
+    --alertTextColor: #f86174;
+    --editTableBgColor: #f2faff;
+    --textFldBorderColor: #ced4da;
+    --textFldHoverBorderColor: #b9bec3;
+    --textFldPlaceholderColor: #8f8f8f;
+    --textFldBgColor: #fff;
+    --mainScrollerColor: rgba(0, 0, 0, 0.5);
+    --popMenuScrollerColor: rgba(0, 0, 0, 0.2);
+    --matDrawerScrollColor: rgba(255, 255, 255, 0.35);
+    --matDrawerScrollHoverColor: rgba(255, 255, 255, 0.45);
+    --btnPassedTextColor: #219653;
+    --btnPassedBgColor: #2196532e;
+    --btnPassedBorderColor: #21965363;
+    --btnFailedTextColor: #e35454;
+    --btnFailedBgColor: #e354542e;
+    --btnFailedBorderColor: #e3545461;
+    --popMenuRowBorderColor: #c3cad0;
+    --popHoveBgColor: #ececec;
+    --btnActiveBgColor: #caf1ca;
+    --btnActiveTextColor: #298a27;
+    --btnActiveBgHoverColor: #caf1ca;
+    --btnInActiveBgColor: #ffe2e2;
+    --btnInActiveTextColor: #e96161;
+    --btnInActiveBgHoverColor: #fbdcdc;
+    --btnToggleBgColor: #ededed;
+    --btnToggleSelectBgColor: #3c454c;
+    --progressDefaultBgColor: #ced4da;
+    --progressGreenBgColor: #75cb88;
+    --checkboxBgColor: #fff;
+    --checkboxCheckedBgColor: #fff;
+    --checkboxTickColor: #54b3e5;
+    --checkboxBorderColor: #d8d8d8;
+    --checkboxBorderHoverColor: #c2c2c2;
+    --iconBtnBgColor: #fff;
+    --iconArrowUpBgColor: #219653;
+    --iconArrowDownBgColor: #eb5757;
+    --greenColor: #219653;
+    --redColor: #eb5757;
+    --blackColor: #000;
+    --whiteColor: #fff;
+    --upTextColor: #219653;
+    --mediumTextColor: #ff9c28;
+    --downTextColor: #eb5757;
+    --colorBgBlue: #59afdf;
+    --colorBgLBlue: #71d7e4;
+    --colorBgLGreen: #b2ec53;
+    --colorBgDGreen: #6bbf31;
+    --colorBgPurple: #ad9aff;
+    --colorBgBrown: #f5c957;
+    --colorBgPink: #ffafaf;
+    --colorBgRed: #ea3d3c;
+    --colorBgDefault: #cbc5c5;
+    --boxBgColor: #fff;
+    --boxBorderColor: #dadde0;
+    --boxShadowColor: rgba(0, 0, 0, 0.09);
+    --tabBgColor: #e4e4e4;
+    --tabHoverBgColor: #3c454c;
+    --tabHoverTextColor: #fff;
+    --noteIconBgColor: #2d9cdb;
+    --listingHeaderBgColor: #233954;
+    --listingHeaderBorderColor: #d4d4d4;
+    --listingHeaderColBorderColor: #d4d4d4;
+    --listingBorderColor: #d2d2d2;
+    --listingEvenBgColor: #fff;
+    --listingDomainOddBgColor: #fff;
+    --listingOddBgColor: #fafafa;
+    --listingColBorderColor: #d2d2d2;
+    --listingEditRowBgColor: #f2faff;
+    --listingMoreBgColor: #fff;
+    --listingMoreTextColor: #89cbed;
+    --listRowTopBorderColor: #cad1d5;
+    --listRowBottomBorderColor: #f8f8f9;
+    --listBottomBorderColor: #e4e7eb;
+    --listHeaderTextColor: #7b7b7b;
+    --listProgressBgColor: #ea3d3c;
+    --listProgressBarBgColor: #6bbf31;
+    --bulletDefaultBgColor: #ccc;
+    --headerFullBgColor: #fff;
+    --headerBgColor: #fff;
+    --headerBottomBorderColor: #f2f2f2;
+    --headerBoxShadowColor: #f2f2f2;
+    --headerMenuIconBgColor: #233954;
+    --headerMenuIconColor: #fff;
+    --headerDropdownBorderColor: #4b5258;
+    --headerDropdownH5TextColor: #8f8f8f;
+    --headerDropdownH5BgColor: #f8f8fb;
+    --headerDropdownH5BorderColor: #c3cad0;
+    --actionCounterBgColor: #eeeff5;
+    --actionCounterTextColor: #eb5757;
+    --notificationBgColor: #ff6b6b;
+    --notificationTextColor: #fff;
+    --sideNavStripBgColor: #2d2e2d;
+    --sideNavStripBorderColor: #202124;
+    --sideNavStripIconColor: #797a7c;
+    --sideNavStripHoverBgColor: #3c454c;
+    --sideNavStripHoverBorderColor: #0385c3;
+    --sideNavStripHoverIconColor: #c8cac9;
+    --sideNavStripDefaultIconColor: rgba(255, 255, 255, 0.2);
+    --topPopBgColor: #fff;
+    --topPopHoverBgColor: #daf2ff;
+    --topPopBorderColor: #c3cad0;
+    --topPopBoxShadowColor: rgba(0, 0, 0, 0.09);
+    --drawerBgColor: #fff;
+    --drawerMenuBgHoverColor: #f3f3f3;
+    --drawerChildMenuBeforeColor: #cccccc;
+    --drawerChildMenuLiBeforeColor: #d8d8d8;
+    --drawerTextColor: #233954;
+    --drawerChildTextColor: #636363;
+    --drawerChildTextHoverColor: #233954;
+    --drawerChildBgHoverColor: #42454e;
+    --dashboardBgContainerColor: #f0f1f6;
+    --dashboardHeadingBgColor: #fff;
+    --dashboardBorderColor: #efeff5;
+    --boxSubText: #828282;
+    --boxBorderBottomColor: #cacaca;
+    --boxCurrentStatusColor: #66788a;
+    --boxTabActiveBorderColor: #4a5f77;
+    --chartLabelColor: #7b7b7b;
+    --chartNumberColor: #8f8f8f;
+    --boxTextColor: #656565;
+    --copyrightBorderColor: #e0e0e0;
+    --copyrightTextColor: #888888;
+    --loginCopyrightTextColor: #8f8f8f;
+    --iconDefaultColor: #3c454c;
+    --iconClearColor: #ea4b4b;
+    --iconArrowColor: #3e3e3e;
+    --iconAddColor: #65bc63;
+    --iconFileSuccess: #40b75a;
+    --iconFileError: #ff6363;
+    --iconFileProgress: #89cbed;
+    --iconFldIcon: #c4cad0;
+    --iconNoData: #c9ced6;
+    --scoreHighBorderColor: #a9e2c1;
+    --scoreModerateBorderColor: #ffc895;
+    --scoreLowBorderColor: #eb5757;
+    --loginInputFocusBorderColor: #80d3fcb8;
+    --loginInputBoxShadowColor: #b1ddf3c7;
+    --browseBoxBgColor: #fff;
+    --browseNoteTextColor: #888888;
+    --fileNoteTextColor: #bbbbbb;
+    --actionIconColor: #9d9d9d;
+    --summaryGroupHeadingBgColor: #edf1f3;
+    --calenderFld: #fff;
+    --boxTabBorderTopColor: #fff;
+}
+
+/* 
+.side-nav-strip-bar ul li.active p {
+    color: #acb5ba;
+}
+
+.side-nav-strip-bar ul li p {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.header-bar .right-bar {
+    border-left: solid 1px var(--headerBottomBorderColor);
+    border-bottom: solid 1px var(--headerBottomBorderColor)!important;
+    box-shadow: none!important;
+}
+
+.box,
+.fileupload-body .drop-inside-box {
+    border-radius: 15px!important;
+}
+
+.fileupload-body .drop-inside-box {
+    border-color: #dbeef7!important;
+}
+
+.dashboard-page .box {
+    border-radius: 15px!important;
+    box-shadow: 0 5px 10px var(--boxShadowColor)!important;
+}
+
+.dashboard-page .message-box .box-tab ul li:not(.active) {
+    background-color: transparent!important;
+    border-color: transparent!important;
+}
+
+.tools-page .tools-list .file-name:hover {
+    border-radius: 15px;
+}
+
+.icon-header-notification,
+.icon-header-settings,
+.icon-help {
+    background-color: var(--sideNavStripHoverIconColor);
+}
+
+.mode .toggle-btn input:checked+.slider {
+    background-color: #2c2e2f!important;
+}
+
+.mode .toggle-btn p strong {
+    color: #fff;
+}
+
+.header-bar .domain-header-popup h6 {
+    background: #fbfbfb;
+}
+
+.header-bar .domain-header-popup h6:hover {
+    color: var(--whiteColor);
+    background: var(--btnGroupActiveBgColor);
+}
+
+.sideTopMenu:after,
+.sideTopMenu:before {
+    border-bottom-color: #fff;
+}
+
+.profile-body .profile-pic {
+    background: #656565;
+}
+
+.header-bar .dropdown-bar h5 {
+    font-weight: 300;
+}
+
+.header-bar .dropdown-bar p {
+    color: #acb5ba;
+}
+
+.header-bar .dropdown-bar .right .icon,
+.icon-menu-arrow-down {
+    background-color: #8f8f8f;
+}
+
+.mode .toggle-btn .slider {
+    background-color: #2c2e2f!important;
+}
+
+.header-bar .domain-header-popup .btn-bar p {
+    color: #6b6b6b;
+}
+
+.mat-calendar-body-selected {
+    background-color: #3c454c;
+}
+
+.mat-calendar-body-in-range::before {
+    background: rgb(60 69 76 / 11%);
+} */
