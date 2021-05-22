@@ -8,9 +8,9 @@ export function callApi(...params) {
     let postData        =   params[2] || {};
     let userData        =   JSON.parse(localStorage.getItem('user') || '{}');
     let reqHeaders      =   {
-                                Accept: "application/json",
+                                // Accept: "application/json",
                                 "Content-Type": "application/json",
-                                'Access-Control-Allow-Origin': '*',
+                                // 'Access-Control-Allow-Origin': '*',
                                 //'Allow' : 'POST, OPTIONS',
                                 //"Access-Control-Allow-Methods": "GET,OPTIONS,POST,PUT",
                                 //"Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"

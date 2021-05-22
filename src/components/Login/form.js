@@ -18,7 +18,7 @@ export default function LoginForm(props) {
         try{
             setProcessing(true);
             //const payload = await callApi('POST', `users/login/`, {email: email, password: password });
-            const payload = await callApi('POST', `users/login/`, {email: 'abhisek.singh@formulaxai.com', password: 'demo@123' });
+            const payload = await callApi('POST', `login/`, {email: 'abhisek.singh@formulaxai.com', password: 'demo@123' });
             /* if (payload.data.error) {
                 console.log(payload.data.error);
                 notifyError(payload.data.error)
