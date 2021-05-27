@@ -30,7 +30,7 @@ export default function Header(){
 
     const logout    =   async ()  =>   {
         try{
-            const payload = await callApi('POST', `/users/logout/`, {});
+            const payload = await callApi('POST', `/logout/`, {});
             if(payload.data) {
                 updateUserData({});
                 history.push('/login');

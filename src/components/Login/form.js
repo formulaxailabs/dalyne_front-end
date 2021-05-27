@@ -17,8 +17,8 @@ export default function LoginForm(props) {
         e.preventDefault();
         try{
             setProcessing(true);
-            //const payload = await callApi('POST', `users/login/`, {email: email, password: password });
-            const payload = await callApi('POST', `users/login/`, {email: 'abhisek.singh@formulaxai.com', password: 'demo@123' });
+            const payload = await callApi('POST', `/login/`, {email: email, password: password });
+            //const payload = await callApi('POST', `/users/login/`, {email: 'abhisek@formulaxai.com', password: 'admin123' });
             /* if (payload.data.error) {
                 console.log(payload.data.error);
                 notifyError(payload.data.error)
@@ -26,7 +26,7 @@ export default function LoginForm(props) {
             else { */
             if(payload.data) {
                 setProcessing(false);
-                let result          =   payload.data || {};
+                let result          =   payload.data.result || {};
                 notifySuccess({message: 'Login Successfully'})
                 let user            =   {
                     ...result.user_details,
@@ -56,7 +56,7 @@ export default function LoginForm(props) {
                     <input className="fld slow" type="password" name="password" onChange={(e) => setPassword(e.target.value)} defaultValue="" placeholder="Password" autoComplete="off" />
                 </div>			
                 <div className="clear"></div> 
-                <div className="strip">           
+                <div className="strip d-none">           
                     <span className="imp">
                         {/* onClick={() => setRememberMe(!rememberme)} checked={rememberme} */}
                         <label htmlFor="remember">

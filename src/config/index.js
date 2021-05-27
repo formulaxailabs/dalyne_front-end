@@ -1,6 +1,7 @@
 let env             =   process.env.REACT_APP_ENV || 'development';
 //let ApiUrl          =   '/api'; // Live
-let ApiUrl          =   "http://13.235.195.1:8089/"
+let ApiUrl          =   "http://13.235.195.1:8089/api/v1"
+//let ApiUrl          =   "https://theclassroom.in/classroom/api/ver1/admin/api.php?"
 
 let path            =   {};
 /* if(env === 'production') {

@@ -17,6 +17,7 @@ function App() {
   }, [])
   
   const updateUserData = (userData)  =>  {
+    console.log('userData update', userData)
     if(!!!userData || isEmpty(userData)) {
       localStorage.removeItem('user');
       setUserData({});

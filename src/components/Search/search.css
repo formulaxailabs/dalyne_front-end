@@ -9,7 +9,7 @@
     flex: 0 0 10%;
     max-width: 10%;
 }
-.download-icons .btn-group { margin: 0; margin:-10px -42px 0 0;}
+.download-icons .btn-group { margin: 0; /* margin:-10px -42px 0 0; */}
 .download-icons .icon-btn {
     border: none;
     display: flex;
@@ -38,22 +38,22 @@
     border-left: solid 1px #f1f1f1;
 }
 .search-result table {
-    width: 3850px;
+    width: 2800px;
 }
 .search-result table tr th, .search-result table tr td {
     padding:5px!important;
 }
 .search-result th:nth-child(1), .search-result td:nth-child(1) {
-    width: 150px;
+    width: 50px;
 }
 .search-result th:nth-child(2), .search-result td:nth-child(2) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(3), .search-result td:nth-child(3) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(4), .search-result td:nth-child(4) {
-    width: 400px;
+    width: 250px;
 }
 .search-result th:nth-child(5), .search-result td:nth-child(5) {
     width: 150px;
@@ -62,25 +62,25 @@
     width: 150px;
 }
 .search-result th:nth-child(7), .search-result td:nth-child(7) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(8), .search-result td:nth-child(8) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(9), .search-result td:nth-child(9) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(10), .search-result td:nth-child(10) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(11), .search-result td:nth-child(11) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(12), .search-result td:nth-child(12) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(13), .search-result td:nth-child(13) {
-    width: 150px;
+    width: 70px;
 }
 .search-result th:nth-child(14), .search-result td:nth-child(14) {
     width: 150px;
@@ -224,4 +224,26 @@ margin-top: 5px;
 }
 .accordian .option-list li .checkfld {
     margin: 4px 7px 0 0px;
+}
+.popup-body .content-area .res-box {
+    max-height: 300px;
+    min-height: 150px;
+    overflow-y: auto
+}
+.react-tag-input {
+    font-size: 13px!important; 
+    width: 75%;
+    float: left;
+}
+.cstm-fld{
+    padding-top:5px;
+}
+.box-list ul {
+    display:flex;
+}
+.box-list ul li h4 {
+    margin: 0;
+}
+.box-list ul li p {
+    margin: 0;
 }

@@ -2,6 +2,7 @@ import Config from '../config';
 import axios from "axios";
 
 let baseAPIUrl          =   Config.ApiUrl;
+
 export function callApi(...params) {
     let method          =   params[0];
     let url             =   params[1] || '';
@@ -10,13 +11,13 @@ export function callApi(...params) {
     let reqHeaders      =   {
                                 Accept: "application/json",
                                 "Content-Type": "application/json",
-                                'Access-Control-Allow-Origin': '*',
-                                //'Allow' : 'POST, OPTIONS',
-                                //"Access-Control-Allow-Methods": "GET,OPTIONS,POST,PUT",
-                                //"Access-Control-Allow-Headers": "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+                                //'Access-Control-Allow-Origin': '*'
                             };
-    if(!!userData.token) {
-        reqHeaders.Authorization    =   "Token " + userData.token;
+    let noTokenUrls     =   ['/login/', '/plans/list/', '/signup/'];
+    if(!noTokenUrls.includes(url)) {
+        if(!!userData.token) {
+            reqHeaders.Authorization    =   "Token " + userData.token;
+        }
     }
     
     let instance = axios.create({
@@ -46,7 +47,11 @@ export function callApi(...params) {
         break;
         
         case'GET':
-            result      =   instance.get(baseAPIUrl+url);
+            let data        =   getParams(postData);
+            if(!!data)
+                result      =   instance.get(`${baseAPIUrl}${url}?${data}`);
+            else
+                result      =   instance.get(baseAPIUrl+url);
         break;
 
         default:
@@ -54,4 +59,33 @@ export function callApi(...params) {
         break;
     }
     return result;
+}
+
+export function callApiFileUpload(...params) {
+    let method          =   params[0];
+    let url             =   params[1] || '';
+    let postData        =   params[2] || {};
+    let userData        =   JSON.parse(localStorage.getItem('user') || '{}');
+    let reqHeaders      =   {
+                                Accept: "application/json",
+                                "Content-Type": "application/json",
+                                'Access-Control-Allow-Origin': '*',
+                                'content-type': 'multipart/form-data'
+                            };
+    if(!!userData.token) {
+        reqHeaders.Authorization    =   "Token " + userData.token;
+    }
+    
+    let instance = axios.create({
+        headers: reqHeaders
+    });
+
+    let result          =   '';
+    let bodydata        =   {};
+    bodydata            =   postData
+    result      =   instance.post(baseAPIUrl+url, bodydata);
+    return result;
+}
+function getParams(data) {
+    return Object.keys(data).map(key => `${key}=${encodeURIComponent(data[key])}`).join('&');
 }

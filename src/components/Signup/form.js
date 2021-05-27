@@ -33,7 +33,7 @@ export default function SignupForm(props) {
         e.preventDefault();
         try{
             setProcessing(true);
-            const payload = await callApi('POST', `/users/signup/`, {
+            const payload = await callApi('POST', `/signup/`, {
                 company_name: company_name,
                 firstname: firstname,
                 lastname: lastname,

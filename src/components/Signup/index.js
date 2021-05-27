@@ -7,6 +7,7 @@ import SignupForm from './form';
 export default function Signup() {
 	let [plans, setPlan]	=	useState('');
 	let [planList, setPlanList]	=	useState([]);
+	let [featureList, setFeatureList]	=	useState([]);
 	let [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -16,11 +17,12 @@ export default function Signup() {
     const getPlan = async (e) => {
         try{
             setLoading(true);
-            const payload = await callApi('GET', `/import-export/plans-listView/`);
+            const payload = await callApi('GET', `/plans/list/`);
             if(payload.data) {
                 setLoading(false);
 				let result          =   payload.data.result || {};
-				setPlanList(result);
+				setPlanList(result.plans_list);
+				setFeatureList(result.features);
 				console.log(result);
             } else {
                 setLoading(false);
@@ -39,7 +41,7 @@ export default function Signup() {
 					(!!!plans) ?
 					<div className="signup-plan">
 						<div className="res-table">
-							<div className="table-hdr">
+							{/* <div className="table-hdr">
 								<table>
 									<tbody>
 										<tr>
@@ -66,9 +68,52 @@ export default function Signup() {
 										</tr>
 									</tbody>
 								</table>
-							</div>
+							</div> */}
 							<div className="table-body">
-								<table>
+								<ul>
+									<li>
+										<div className="plan-row">
+											<ul className="d-flex">
+												<li>
+													<p>&nbsp;</p>
+													{
+														(featureList || []).map((item, k) => {
+															return (
+																<p key={k}>{item}</p>
+															)
+														})
+													}
+												</li>												
+												{
+													(planList || []).map((item, k) => {
+														return (															
+															<li>
+																<p>
+																	<button  onClick={() => setPlan(item.id)} className="btn slow">
+																		{item.name}
+																	</button>
+																</p>
+																<p>{item.pakage_validity}</p>
+																<p>{item.download_points}</p>
+																<p>{item.unlimited_data_access}</p>
+																<p>{item.workspaces}</p>
+																<p>{item.searches}</p>
+																<p>{item.workspaces_validity}</p>
+																<p>{item.workspaces_deletion_per_qtr}</p>
+																<p>{item.shipment_limit_in_workspaces}</p>
+																<p>{(item.add_on_points_Facility)?'Yes':'No'}</p>
+																<p>{item.hot_products}</p>
+																<p>{item.hot_company}</p>
+																<p>{item.user}</p>
+															</li>
+														)
+													})
+												}
+											</ul>
+										</div>
+									</li>
+								</ul>
+								{/* <table>
 									<tbody>
 										<tr>
 											<td>Cost</td>
@@ -351,7 +396,7 @@ export default function Signup() {
 											<td>Yes</td>
 										</tr>
 									</tbody>
-								</table>
+								</table> */}
 							</div>
 						</div>
 					</div> :
