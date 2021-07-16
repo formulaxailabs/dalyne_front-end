@@ -7,12 +7,16 @@ export function callApi(...params) {
     let method          =   params[0];
     let url             =   params[1] || '';
     let postData        =   params[2] || {};
+    let header          =   params[3] || '';
     let userData        =   JSON.parse(localStorage.getItem('user') || '{}');
     let reqHeaders      =   {
                                 Accept: "application/json",
                                 "Content-Type": "application/json",
+                            
                                 //'Access-Control-Allow-Origin': '*'
                             };
+    
+    //console.log('headers : ', reqHeaders)
     let noTokenUrls     =   ['/login/', '/plans/list/', '/signup/'];
     if(!noTokenUrls.includes(url)) {
         if(!!userData.token) {
@@ -20,9 +24,13 @@ export function callApi(...params) {
         }
     }
     
-    let instance = axios.create({
+    let obj     =   {
         headers: reqHeaders
-    });
+    }
+    if(!!header) {
+        obj      =   {...obj, ...header};
+    }
+    let instance = axios.create({...obj});
 
     let result          =   '';
     let bodydata        =   {};

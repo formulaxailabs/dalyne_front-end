@@ -34,7 +34,7 @@ export default function LoginForm(props) {
                     token_expiry: result.token_expiry
                 }
                 updateUserData(user);
-                history.push('/dashboard');
+                history.push('/search');
             } else {
                 setProcessing(false);
                 notifyError({message: 'Invalid username or password'});

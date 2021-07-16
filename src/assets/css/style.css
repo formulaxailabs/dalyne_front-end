@@ -30,7 +30,7 @@ tr {
     box-sizing: border-box;
 }
 
-a {
+a, .c-pointer {
     cursor: pointer;
 }
 
@@ -64,7 +64,6 @@ img {
 ::-webkit-scrollbar-thumb {
     background-color: var(--mainScrollerColor);
 }
-
 a {
     color: var(--aTagColor);
 }
@@ -74,7 +73,7 @@ a:hover {
 }
 
 :focus, button:focus {
-    outline: none;
+    outline: none!important;
 }
 
 b,
@@ -546,9 +545,17 @@ button:disabled {
     color: var(--whiteColor)
 }
 
+table {
+    position: relative;
+}
 .listing-box table tr th {
     padding: 5px 5px 2px 5px;
     font-weight: 500;
+    font-size: 13px;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .listing-box table tr td:first-child,

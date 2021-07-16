@@ -34,3 +34,10 @@ export const catchErrorHandler =(err) =>{
         }
     }
 }
+
+export const convertFloatTwoDecimal = function(num) {
+if(!!num)
+    return parseFloat(num).toFixed(2);
+else
+    return '0.00';
+}
