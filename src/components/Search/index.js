@@ -24,6 +24,7 @@ export default function Search() {
     const [select_all, setSelectAll]	=	useState(false);
     const [showDownload, setShowDownload]	=	useState(false);
     const [selIds, setSelIds]	=	useState([]);
+	const [searchData, setSearchData]	=	useState({});
     
     
     //Column Search
@@ -76,6 +77,7 @@ export default function Search() {
         try{
             setLoading(true);
             setProcessing(true);
+            setSearchData(data);
             const payload = await callApi('POST', `/advanced/search/data/`, data);
             if(payload.data) {
                 let result   =   payload.data || {};
@@ -105,7 +107,7 @@ export default function Search() {
                 const payload = await callApi('GET', `/filtered/data/`, data);
                 if(payload.data) {
                     let result          =   payload.data.results || [];
-                    setList(result);
+                    setList(result.data);
                     setTotalRecords(payload.data.count || 0);
                     setLoading(false);
                     setProcessing(false);
@@ -161,6 +163,7 @@ export default function Search() {
         setMinQty('');
         setMaxQty('');
         setSearchParams({});
+        setSearchData({});
     }
     
     const filter = (e) => {
@@ -225,13 +228,15 @@ export default function Search() {
             } else {
                 delete params.ordering;
             }
-            console.log(params);
+            //console.log(params);
             getSearchResult(params);
         } else {
             params.ordering =   field;
             getSearchResult(params);
         }
     }
+
+    //console.log(searchData, '2');
 
     return (
         <main className="main-container">
@@ -368,10 +373,7 @@ export default function Search() {
                                                                                     <i className={`fas fa-sort-down${search_params.ordering === '-RITC' ? ' active' : ''}`}></i>
                                                                                 </span>
                                                                             </th>
-                                                                            <th>HS Code Description 
-                                                                                {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}
-                                                                            </th>
-                                                                            {/* <th>Commodity Description <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span></th> */}
+                                                                            <th>HS Code Description</th>
                                                                             <th className="c-pointer" onClick={() => sortBy('UQC')}>UQC 
                                                                                 <span className="sorting">
                                                                                     <i className={`fas fa-sort-up${search_params.ordering === 'UQC'? ' active' : ''}`}></i>
@@ -402,12 +404,7 @@ export default function Search() {
                                                                                     <i className={`fas fa-sort-down${search_params.ordering === '-PORT_OF_LOADING' ? ' active' : ''}`}></i>
                                                                                 </span>
                                                                             </th>
-                                                                            <th>Port Code 
-                                                                                {/* <span className="sorting">
-                                                                                    <i onClick={() => sortBy('RITC')} className={`fas fa-sort-up${search_params.ordering === 'RITC'? ' active' : ''}`}></i>
-                                                                                    <i onClick={() => sortBy('-RITC')} className={`fas fa-sort-up${search_params.ordering === '-RITC' ? ' active' : ''}`}></i>
-                                                                                </span> */}
-                                                                            </th>
+                                                                            <th>Port Code</th>
                                                                             <th className="c-pointer" onClick={() => sortBy('PORT_OF_DISCHARGE')}>Port Of Discharge 
                                                                                 <span className="sorting">
                                                                                     <i className={`fas fa-sort-up${search_params.ordering === 'PORT_OF_DISCHARGE'? ' active' : ''}`}></i>
@@ -426,40 +423,62 @@ export default function Search() {
                                                                                     <i className={`fas fa-sort-down${search_params.ordering === '-IMPORTER_NAME' ? ' active' : ''}`}></i>
                                                                                 </span>
                                                                             </th>
-                                                                            {/* <th>Type <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span></th> */}
-                                                                            <th>2 Digit {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>4 Digit {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Currency {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>UNT Price FC {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>INV Value FC {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>UNT Price INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Invoice No {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>BE No {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>UNT Rate With Duty INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            {/* <th>Per UNT Duty INR <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span></th> */}
-                                                                            <th>Duty INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Duty USD {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Duty FC {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Duty % {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>EX Total Value INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>ASS Value INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>ASS Value USD {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>ASS Value FC {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Value INR {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Value USD {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Value FC {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Exchange Rate {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Exporter Address {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer ID {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Address {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer City/State {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Pin {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Phone {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>Importer Email {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>IMPORTER Contact Person {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>BE Type {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            <th>CHA Name {/* <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span> */}</th>
-                                                                            {/* <th>Record ID <span className="sorting"><i className="fas fa-sort-up"></i><i className="fas fa-sort-down"></i></span></th> */}
+                                                                            <th>2 Digit</th>
+                                                                            <th>4 Digit</th>
+                                                                            <th>Currency</th>
+                                                                            <th>UNT Price FC</th>
+                                                                            <th>INV Value FC</th>
+                                                                            <th>UNT Price INR</th>
+                                                                            <th>Invoice No</th>
+                                                                            <th>UNT Rate With Duty INR</th>
+                                                                            <th>Duty INR</th>
+                                                                            <th>Duty USD</th>
+                                                                            <th>Duty FC</th>
+                                                                            <th>Duty %</th>
+                                                                            <th>EX Total Value INR</th>
+                                                                            <th>ASS Value INR</th>
+                                                                            <th>ASS Value USD</th>
+                                                                            <th>ASS Value FC</th>                                                                            
+                                                                            <th>Importer Value INR</th>
+                                                                            <th>Importer Value USD</th>
+                                                                            <th>Importer Value FC</th>
+                                                                            <th>Exchange Rate</th>
+                                                                            <th>Importer Name</th>    
+                                                                            <th>Importer ID</th>
+                                                                            <th>Importer Address</th>
+                                                                            <th>Exporter Address</th>                                                                        
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type == "export") ? 
+                                                                                    <>
+                                                                                        <th>SB No</th>
+                                                                                        <th>Exporter City</th>
+                                                                                        <th>Exporter Pin</th>
+                                                                                        <th>FOB FC</th>
+                                                                                        <th>FOB INR</th>
+                                                                                        <th>FOB USD</th>
+                                                                                        <th>PER UNT FOB</th>
+                                                                                        <th>UNIT RATE WITH FOB INR</th>
+                                                                                    </>
+                                                                                : null
+                                                                            }
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type == "import") ?
+                                                                                    <>
+                                                                                        <th>BE No</th>
+                                                                                        <th>Importer City/State</th>
+                                                                                        <th>Importer Pin</th>
+                                                                                        <th>Importer Phone</th>
+                                                                                        <th>Importer Email</th>
+                                                                                        <th>IMPORTER Contact Person</th>
+                                                                                        <th>BE Type</th>
+                                                                                        <th>CHA Name</th>
+                                                                                        <th>Duty Perct</th>
+                                                                                        <th>EX Total Value INR</th>
+                                                                                        <th>Per Unit Duty INR</th>
+                                                                                        <th>Unit Rate with Duty INR</th>
+                                                                                    </>
+                                                                                :null
+                                                                            }
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
@@ -536,12 +555,36 @@ export default function Search() {
                                                                             <td>&nbsp;</td>                                                                      
                                                                             <td>&nbsp;</td>
                                                                             <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type == "export") ? 
+                                                                                    <>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                    </>
+                                                                                : null
+                                                                            }
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type == "import") ?
+                                                                                    <>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                    </>
+                                                                                :null
+                                                                            }
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -552,7 +595,7 @@ export default function Search() {
                                                                         (!isLoading) ?
                                                                         (list.length > 0) ?
                                                                             (list || []).map((item, k) => {
-                                                                                return <Data key={k} selIds={selIds} handleSelect={handleSelect} item={item}/>
+                                                                                return <Data key={k} selIds={selIds} handleSelect={handleSelect} type={searchData.data_type} item={item}/>
                                                                             })
                                                                         :
                                                                         <tr>

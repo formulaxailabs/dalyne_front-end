@@ -17,7 +17,7 @@ export default function AdvancedSearch(props){
     const [selCompanies, setSelCompanies]    =   useState([]);
     const [selCompanyIds, setSelCompanyIds]    =   useState([]);
     const [data_type, setDataType]    =   useState('import');
-    const [search_field, setSearchField]    =   useState('product');
+    const [search_field, setSearchField]    =   useState('hs_description');
     const [search_value, setSearchValue] = useState([])
     const [start_date, setStartDate]    =   useState('');
     const [end_date, setEndDate]    =   useState('');
@@ -28,6 +28,7 @@ export default function AdvancedSearch(props){
     const [searchTxt, setSearchTxt] =   useState('');
     const [productList, setProducts]    =   useState([]);
     const [importerExporterList, setImporterExporter]    =   useState([]);
+    const maxDate = moment().format('YYYY-MM-DD');
     
 	useEffect(() => {
         if(search_field === 'hs_description' || search_field === 'hs_code' || search_field === 'product') {
@@ -170,7 +171,7 @@ export default function AdvancedSearch(props){
     }
 
     const applyProduct = () => {
-        console.log(selProducts)
+        //console.log(selProducts)
         setSearchValue([...selProducts]);
         setShowProduct(false);
     }
@@ -187,11 +188,12 @@ export default function AdvancedSearch(props){
             setSelProducts([...selProducts, {id : tag.id, text : tag.value, value : tag.value}]);
             setSelProductIds([...selProductIds, tag.id]);
             setSearchValue([...search_value, {id : tag.id, text : tag.value, value : tag.value}]);
-        }else if(search_field === 'product' || search_field === 'exporter_name') {
-            setSearchValue([...search_value, {id : tag.id, text : searchTxt, value : tag.value}]);
+        }else if(search_field === 'product' || search_field === 'hs_description') {
+            setSearchValue([...search_value, {id : tag.id, text : searchTxt, value : searchTxt}]);
         }else{
             setSearchValue([...search_value, tag]);
         }
+        console.log(tag, search_field,searchTxt, 22)
     }
 
     const onDelete    =   (i)  =>  {
@@ -236,7 +238,7 @@ export default function AdvancedSearch(props){
         return isError;
     }
 
-    console.log(' selProductIds ; ', selProducts)
+    //console.log(' selProductIds ; ', selProducts)
     let error   =   validate();
     return(
         <>
@@ -302,13 +304,13 @@ export default function AdvancedSearch(props){
                             <div className="col-md-2 pl-0">
                                 <div className="fld-group">
                                     <label>Start Date</label>
-                                    <input name="" disabled={!!period} value={start_date} onChange={(e) => setStartDate(e.target.value)} type="date" className="fld" />
+                                    <input max={maxDate} name="" disabled={!!period} value={start_date} onChange={(e) => setStartDate(e.target.value)} type="date" className="fld" />
                                 </div>
                             </div>
                             <div className="col-md-2 pl-0">
                                 <div className="fld-group">
                                     <label>End Date</label>
-                                    <input name="" disabled={!!period} value={end_date} onChange={(e) => setEndDate(e.target.value)} type="date" className="fld" />
+                                    <input max={maxDate} name="" disabled={!!period} value={end_date} onChange={(e) => setEndDate(e.target.value)} type="date" className="fld" />
                                 </div>
                             </div>
                             <div className="col-md-4 pl-0">
