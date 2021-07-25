@@ -102,8 +102,8 @@ export default function AdvancedSearch(props){
                 let data    =   {
                     limit: 100,
                     offset: offset,
-                    start_date:   moment('01/03', 'DD/MM').format('YYYY-MM-DD'),
-                    end_date:   moment('30/04', 'DD/MM').add(1, 'years').format('YYYY-MM-DD'),
+                    start_date:   moment(start_date).format('YYYY-MM-DD'),
+                    end_date:   moment(end_date).format('YYYY-MM-DD'),
                     data_type: data_type,
                     country: country
                 }
@@ -152,7 +152,7 @@ export default function AdvancedSearch(props){
         setSelCompanies([]);
         setSelCompanyIds([]);
         setDataType('import');
-        setSearchField('product');
+        setSearchField('hs_description');
         setSearchValue([]);
         setStartDate('');
         setEndDate('');
