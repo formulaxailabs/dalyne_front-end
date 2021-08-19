@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useMemo} from 'react';
-import moment from 'moment-timezone';
+import React, {useState, useEffect} from 'react';
+//import moment from 'moment-timezone';
 /* import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css"; */
 import {callApi} from '../../helper/api';
-import {catchErrorHandler, convertFloatTwoDecimal} from '../../helper/common';
+import {catchErrorHandler} from '../../helper/common';
 import AdvancedSearch from './search';
 import './search.css';
 import Pagination from '../../utils/pagination';
@@ -18,7 +18,7 @@ export default function Search() {
     const [searched, setSearched] = useState(false);
     const [list, setList]   =   useState([]);
     const [data, setData]   =   useState({});
-	const itemsPerPage	=	100;
+	const itemsPerPage	=	25;
 	const [totalRecords, setTotalRecords]	=	useState(0);
     const [pageno, setPageNo]	=	useState(1);
     const [select_all, setSelectAll]	=	useState(false);
@@ -109,6 +109,15 @@ export default function Search() {
                     let result          =   payload.data.results || [];
                     setList(result.data);
                     setTotalRecords(payload.data.count || 0);
+                    setData({
+                        ...data,
+                        country_origin: result.country_origin,
+                        exporter_count:result.exporter_count,
+                        hs_code_count: result.hs_code_count,
+                        importer_count: result.importer_count,
+                        port_of_destination: result.port_of_destination,
+                        shipment_count: result.shipment_count
+                    });
                     setLoading(false);
                     setProcessing(false);
                     setSearched(true);
@@ -124,6 +133,32 @@ export default function Search() {
             setLoading(false);
             setProcessing(false);
             setSearched(true);
+            catchErrorHandler(err);
+        }
+    }
+
+    const getSortedResult = async (reqData) => {
+        try{
+            let offset  =   ((reqData.pageno - 1) * itemsPerPage);
+            let data    =   {...reqData, offset: offset, limit: itemsPerPage};
+            if(!isEqual(search_params, data)) {
+                setSearchParams(data);
+                const payload = await callApi('GET', '/ordered/data/', data);
+                if(payload.data) {
+                    let result          =   payload.data.results || [];
+                    setList(result);
+                    setLoading(false);
+                    setProcessing(false);
+                } else {
+                    setList([]);
+                    setLoading(false);
+                    setProcessing(false);
+                }
+            }
+        } catch(err) {
+            setList([]);
+            setLoading(false);
+            setProcessing(false);
             catchErrorHandler(err);
         }
     }
@@ -228,15 +263,12 @@ export default function Search() {
             } else {
                 delete params.ordering;
             }
-            //console.log(params);
-            getSearchResult(params);
+            getSortedResult(params);
         } else {
             params.ordering =   field;
-            getSearchResult(params);
+            getSortedResult(params);
         }
     }
-
-    //console.log(searchData, '2');
 
     return (
         <main className="main-container">
@@ -337,6 +369,8 @@ export default function Search() {
                                                     (!!showDownload) ?
                                                     <Download 
                                                         setShowDownload={setShowDownload}
+                                                        setSelIds={setSelIds}
+                                                        setSelectAll={setSelectAll}
                                                         search_params={search_params}
                                                         selIds={selIds}
                                                         totalRecords={totalRecords}
@@ -404,7 +438,11 @@ export default function Search() {
                                                                                     <i className={`fas fa-sort-down${search_params.ordering === '-PORT_OF_LOADING' ? ' active' : ''}`}></i>
                                                                                 </span>
                                                                             </th>
-                                                                            <th>Port Code</th>
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type === "export") ?
+                                                                                <th>Port Code</th>
+                                                                                : null
+                                                                            }
                                                                             <th className="c-pointer" onClick={() => sortBy('PORT_OF_DISCHARGE')}>Port Of Discharge 
                                                                                 <span className="sorting">
                                                                                     <i className={`fas fa-sort-up${search_params.ordering === 'PORT_OF_DISCHARGE'? ' active' : ''}`}></i>
@@ -423,59 +461,73 @@ export default function Search() {
                                                                                     <i className={`fas fa-sort-down${search_params.ordering === '-IMPORTER_NAME' ? ' active' : ''}`}></i>
                                                                                 </span>
                                                                             </th>
-                                                                            <th>2 Digit</th>
-                                                                            <th>4 Digit</th>
+                                                                            {/* <th>2 Digit</th> */}
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
+                                                                                    <th>4 Digit</th>
+                                                                                : null
+                                                                            }
                                                                             <th>Currency</th>
                                                                             <th>UNT Price FC</th>
-                                                                            <th>INV Value FC</th>
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
+                                                                                    <th>INV Value FC</th>
+                                                                                : null
+                                                                            }
                                                                             <th>UNT Price INR</th>
-                                                                            <th>Invoice No</th>
-                                                                            <th>UNT Rate With Duty INR</th>
-                                                                            <th>Duty INR</th>
-                                                                            <th>Duty USD</th>
-                                                                            <th>Duty FC</th>
-                                                                            <th>Duty %</th>
-                                                                            <th>EX Total Value INR</th>
-                                                                            <th>ASS Value INR</th>
-                                                                            <th>ASS Value USD</th>
-                                                                            <th>ASS Value FC</th>                                                                            
-                                                                            <th>Importer Value INR</th>
-                                                                            <th>Importer Value USD</th>
-                                                                            <th>Importer Value FC</th>
-                                                                            <th>Exchange Rate</th>
-                                                                            <th>Importer Name</th>    
-                                                                            <th>Importer ID</th>
-                                                                            <th>Importer Address</th>
-                                                                            <th>Exporter Address</th>                                                                        
-                                                                            {   
-                                                                                (!!searchData.data_type && searchData.data_type == "export") ? 
+
+
+                                                                            {/* <th>Invoice No</th> */}
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
                                                                                     <>
-                                                                                        <th>SB No</th>
+                                                                                        <th>UNT Rate With Duty INR</th>
+                                                                                        <th>Duty INR</th>                                                                                        
+                                                                                        {/* <th>Duty USD</th> */}
+                                                                                        {/* <th>Duty FC</th> */}
+                                                                                        {/* <th>Duty %</th> */}
+                                                                                        {/* <th>EX Total Value INR</th> */}
+                                                                                        <th>ASS Value INR</th>
+                                                                                        {/* <th>ASS Value USD</th> */}
+                                                                                        {/* <th>ASS Value FC</th> */}                                                                            
+                                                                                        {/* <th>Importer Value INR</th> */}
+                                                                                        {/* <th>Importer Value USD</th> */}
+                                                                                        {/* <th>Importer Value FC</th> */}
+                                                                                    </>
+                                                                                :null
+                                                                            }
+                                                                            {/* <th>Exchange Rate</th> */}
+                                                                            <th>IEC</th>
+                                                                            {/* <th>Importer Address</th>
+                                                                            <th>Exporter Address</th>  */}                                                                       
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type === "export") ? 
+                                                                                    <>
+                                                                                        {/* <th>SB No</th> */}
                                                                                         <th>Exporter City</th>
-                                                                                        <th>Exporter Pin</th>
-                                                                                        <th>FOB FC</th>
+                                                                                        {/* <th>Exporter Pin</th> */}
+                                                                                        {/* <th>FOB FC</th> */}
                                                                                         <th>FOB INR</th>
                                                                                         <th>FOB USD</th>
-                                                                                        <th>PER UNT FOB</th>
-                                                                                        <th>UNIT RATE WITH FOB INR</th>
+                                                                                       {/*  <th>PER UNT FOB</th> */}
+                                                                                        {/* <th>UNIT RATE WITH FOB INR</th> */}
                                                                                     </>
                                                                                 : null
                                                                             }
                                                                             {
-                                                                                (!!searchData.data_type && searchData.data_type == "import") ?
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
                                                                                     <>
-                                                                                        <th>BE No</th>
+                                                                                        {/* <th>BE No</th>
                                                                                         <th>Importer City/State</th>
                                                                                         <th>Importer Pin</th>
                                                                                         <th>Importer Phone</th>
                                                                                         <th>Importer Email</th>
                                                                                         <th>IMPORTER Contact Person</th>
                                                                                         <th>BE Type</th>
-                                                                                        <th>CHA Name</th>
+                                                                                        <th>CHA Name</th> */}
                                                                                         <th>Duty Perct</th>
-                                                                                        <th>EX Total Value INR</th>
-                                                                                        <th>Per Unit Duty INR</th>
-                                                                                        <th>Unit Rate with Duty INR</th>
+                                                                                        {/* <th>Per Unit Duty INR</th>
+                                                                                        <th>Unit Rate with Duty INR</th> */}
                                                                                     </>
                                                                                 :null
                                                                             }
@@ -514,10 +566,14 @@ export default function Search() {
                                                                                 <input onKeyPress={filter} onChange={(e) => setPortOfLoading(e.target.value)} value={port_of_loading} placeholder="Port Of Loading" type="text" className="fld slow" />
                                                                                 {!!port_of_loading ? <span className="fldClear" onClick={() => {setPortOfLoading(''); _filter('port_of_loading');}}>x</span> : null}
                                                                             </td>
-                                                                            <td>
-                                                                                <input onKeyPress={filter} onChange={(e) => setPort(e.target.value)} value={port_code} placeholder="Port" type="text" className="fld slow" />
-                                                                                {!!port_code ? <span className="fldClear" onClick={() => {setPort(''); _filter('port_code');}}>x</span> : null}
-                                                                            </td>
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type == "export") ?
+                                                                                <td>
+                                                                                    <input onKeyPress={filter} onChange={(e) => setPort(e.target.value)} value={port_code} placeholder="Port" type="text" className="fld slow" />
+                                                                                    {!!port_code ? <span className="fldClear" onClick={() => {setPort(''); _filter('port_code');}}>x</span> : null}
+                                                                                </td>
+                                                                                : null
+                                                                            }
                                                                             <td>
                                                                                 <input onKeyPress={filter} onChange={(e) => setPortOfDischage(e.target.value)} value={port_of_discharge} placeholder="Port of Discharge" type="text" className="fld slow" />
                                                                                 {!!port_of_discharge ? <span className="fldClear" onClick={() => {setPortOfDischage(''); _filter('port_of_discharge');}}>x</span> : null}
@@ -530,47 +586,58 @@ export default function Search() {
                                                                                 <input onKeyPress={filter} onChange={(e) => setImporter(e.target.value)} value={importer} placeholder="Imported Name" type="text" className="fld slow" />
                                                                                 {!!importer ? <span className="fldClear" onClick={() => {setImporter(''); _filter('importer');}}>x</span> : null}
                                                                             </td>
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type == "import") ?
+                                                                                    <td>&nbsp;</td>
+                                                                                : null
+                                                                            }
                                                                             <td>&nbsp;</td>
                                                                             <td>&nbsp;</td>
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
+                                                                                    <td>&nbsp;</td>
+                                                                                : null
+                                                                            }
                                                                             <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>                                                                      
-                                                                            <td>&nbsp;</td>
-                                                                            <td>&nbsp;</td>
-                                                                            {   
-                                                                                (!!searchData.data_type && searchData.data_type == "export") ? 
+
+                                                                            {/* <td>&nbsp;</td> */}
+                                                                            {
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
                                                                                     <>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
+                                                                                        {/* <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td> */}
+                                                                                    </>
+                                                                                : null
+                                                                            }
+                                                                            <td>&nbsp;</td>
+                                                                            {/* <td>&nbsp;</td>
+                                                                            <td>&nbsp;</td>                                                                      
+                                                                            <td>&nbsp;</td> */}
+                                                                            {   
+                                                                                (!!searchData.data_type && searchData.data_type === "export") ? 
+                                                                                    <>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        {/* <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td> */}
                                                                                     </>
                                                                                 : null
                                                                             }
                                                                             {
-                                                                                (!!searchData.data_type && searchData.data_type == "import") ?
+                                                                                (!!searchData.data_type && searchData.data_type === "import") ?
                                                                                     <>
+                                                                                        {/* <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
@@ -578,9 +645,7 @@ export default function Search() {
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
                                                                                         <td>&nbsp;</td>
-                                                                                        <td>&nbsp;</td>
-                                                                                        <td>&nbsp;</td>
-                                                                                        <td>&nbsp;</td>
+                                                                                        <td>&nbsp;</td> */}
                                                                                         <td>&nbsp;</td>
                                                                                     </>
                                                                                 :null

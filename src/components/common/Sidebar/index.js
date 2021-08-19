@@ -117,7 +117,6 @@ export default function Sidebar(props){
             width: "100%"
         }, 0); 
         setShowMenu(false);
-        console.log('Handle Outer Click Event')
     }
 
     return ( 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './assets/css/bootstrap.min.css';
 import './assets/css/fontawesome.css';
 import './assets/css/style.css';
@@ -17,7 +17,6 @@ function App() {
   }, [])
   
   const updateUserData = (userData)  =>  {
-    console.log('userData update', userData)
     if(!!!userData || isEmpty(userData)) {
       localStorage.removeItem('user');
       setUserData({});

@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import { useLocation } from 'react-router-dom';
 import {isEmpty} from 'lodash';

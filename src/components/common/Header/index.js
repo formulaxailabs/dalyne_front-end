@@ -7,9 +7,9 @@ import userContext from '../../../user-context';
 import {callApi} from '../../../helper/api';
 
 export default function Header(){
-    let {userData, updateUserData} = useContext(userContext);
+    let {updateUserData} = useContext(userContext);
     let history     =   useHistory();
-    const toggleMenu  =   ()  =>  {
+    /* const toggleMenu  =   ()  =>  {
         if($('#mySidenav').css('margin-left') === '0px') {  
             $('#mySidenav').animate({
                 marginLeft: "-=221px"
@@ -26,7 +26,7 @@ export default function Header(){
                 width: "97%"
             }, 0);
         }
-    }
+    } */
 
     const logout    =   async ()  =>   {
         try{
