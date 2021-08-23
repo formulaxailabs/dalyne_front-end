@@ -4,6 +4,7 @@ import {callApi} from '../../helper/api';
 import {catchErrorHandler} from '../../helper/common';
 import Loading from '../common/Loading';
 import Pagination from '../../utils/pagination';
+import {error as notifyError, success as notifySuccess} from '../../helper/notify';
 
 export default function Download(props){
 	const [isDownloading, setDownloading] = useState(false);
@@ -17,30 +18,52 @@ export default function Download(props){
 
     const downloadExcel = async ()  =>  {
         try{
-            setDownloading(true);
-            let data    =   {...props.search_params};
-            if(!downloadAll) {
-                data.ids    =   props.selIds || [];
-            } else {
-                data.select_all =   true;
+            if(window.confirm('Do you really want to download')){
+                setDownloading(true);
+                let data    =   {...props.search_params};
+                if(!downloadAll) {
+                    data.ids    =   props.selIds || [];
+                } else {
+                    data.select_all =   true;
+                }
+                const payload = await callApi('POST', `/export/shipments/`, data, {responseType: 'blob'});
+                if(payload.data) {
+                    let result          =   payload.data.results || [];
+                    FileDownload(payload.data, 'Importers_shipments_dd65.xls');                
+                    downloadMessage();
+                    /* const url = window.URL.createObjectURL(new Blob([payload.data]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', 'Importers_shipments_dd65.xls'); //or any other extension
+                    document.body.appendChild(link);
+                    link.click(); */
+                    setDownloading(false);
+                    props.setSelIds([]);
+                    props.setSelectAll(false);
+                    props.setShowDownload(false)
+                } else {
+                    setDownloading(false);
+                }
             }
-            const payload = await callApi('POST', `/export/shipments/`, data, {responseType: 'blob'});
-            if(payload.data) {
-                let result          =   payload.data.results || [];
-                FileDownload(payload.data, 'Importers_shipments_dd65.xls');
-                /* const url = window.URL.createObjectURL(new Blob([payload.data]));
-                const link = document.createElement('a');
-                link.href = url;
-                link.setAttribute('download', 'Importers_shipments_dd65.xls'); //or any other extension
-                document.body.appendChild(link);
-                link.click(); */
-                setDownloading(false);
-            } else {
-                setDownloading(false);
-            }
-        } catch(err) {
+        } catch(error) {
             setDownloading(false);
-            catchErrorHandler(err);
+            if(error.response.status == 400){
+                if(error.response) {
+                    let data = JSON.parse(await error.response.data.text());
+                    notifyError({message: data.msg});
+                    props.setSelIds([]);
+                    props.setSelectAll(false);
+                    props.setShowDownload(false)
+                }
+            }
+        }
+    }
+
+    const downloadMessage = async () => {
+        const payload = await callApi('GET', `/download/data/response/`);
+        if(payload.data) {
+            let resultMsg =  payload.data || "";
+            notifySuccess({message: resultMsg});
         }
     }
 
@@ -66,8 +89,8 @@ export default function Download(props){
                                 <button onClick={() => props.setShowDownload(false)} className="default-btn reset-btn slow" type="button">
                                     Cancel
                                 </button>
-                                <button onClick={downloadExcel} className="default-btn slow" type="button">
-                                    Ok
+                                <button disabled={!!isDownloading} onClick={downloadExcel} className="default-btn slow" type="button">
+                                    {!!isDownloading ? 'Downloading...' : 'Ok'}
                                 </button>
                             </div>
                         </> : <>
@@ -78,8 +101,8 @@ export default function Download(props){
                                 <button onClick={() => props.setShowDownload(false)} className="default-btn reset-btn slow" type="button">
                                     Cancel
                                 </button>
-                                <button onClick={downloadExcel} className="default-btn slow" type="button">
-                                    Ok
+                                <button disabled={!!isDownloading} onClick={downloadExcel} className="default-btn slow" type="button">
+                                    {!!isDownloading ? 'Downloading...' : 'Ok'}
                                 </button>
                             </div>
                         </>

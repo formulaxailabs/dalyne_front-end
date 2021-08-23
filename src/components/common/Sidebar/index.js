@@ -10,17 +10,21 @@ export default function Sidebar(props){
     let userMenu    =   [{
         "menuName":"Home",
         "menuIcon":"fa fa-home icon",
-        "menuUrl":"/dashboard"
+        "menuUrl":"/search"
+    }, {
+        "menuName":"Search",
+        "menuIcon":"fas fa-search icon",
+        "menuUrl":"/search"
     },{
         "menuName":"My Account",
         "menuIcon":"fas fa-user-tie icon",
         "menuUrl":"",
         "submenuList":[{
                 "submenuName":"Profile",
-                "submenuUrl":""
+                "submenuUrl":"/profile"
             }, {
-                "submenuName":"Edit Profile",
-                "submenuUrl":""
+                "submenuName":"Change Password",
+                "submenuUrl":"/change-password"
             }
         ]
     }, {
@@ -117,7 +121,6 @@ export default function Sidebar(props){
             width: "100%"
         }, 0); 
         setShowMenu(false);
-        console.log('Handle Outer Click Event')
     }
 
     return ( 

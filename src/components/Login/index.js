@@ -8,7 +8,7 @@ export default function Login() {
 		<div className="login_body">		
 			<div className="login-box-wrap">
 				<div className="left">
-					<img src="/images/login.jpg" />
+					<img src="/images/login.jpg" alt="Dalyne Logo" />
 				</div>
 				<div className="right">
 					<div className="login_box">

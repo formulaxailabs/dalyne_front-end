@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;}
 .header-bar .right ul li .profile_pic img { width:20px; height:20px;  }
-.header-bar .right ul li .profile_pic span {font-size: 13px;letter-spacing:.5px;}
+.header-bar .right ul li .profile_pic span { text-transform:capitalize; font-size: 13px;letter-spacing:.5px;}
 .header-bar .right ul li .profile_pic span.arow {font-size:18px;line-height: 20px;    margin: 0 0 0 8px;}
 .header-bar .right ul li .profile_pic span.arow .fas {font-size:18px;}
 .header-bar .right .profile_submenu li {text-align:right!important;}
@@ -80,6 +80,14 @@
 .header-bar .right .header_dropdown_list li {    display: block;
     width: 100%;
 padding:3px 10px; cursor:pointer; font-weight:normal;
+
+}
+.header-bar .right .header_dropdown_list li a {
+    color: var(--textColor);
+    text-decoration: none;
+}
+.header-bar .right .header_dropdown_list li a:hover{
+    color:#0385c3;
 }
 .header-bar .right .header_dropdown_list li:hover {border-radius: 10px;
 color:#0385c3; background: rgba(0,0,0,0.02); 

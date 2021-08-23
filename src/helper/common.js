@@ -1,4 +1,4 @@
-import {error as notifyError, success as notifySuccess} from './notify';
+import {error as notifyError} from './notify';
 
 export const isValidEmail =(email) =>{
     const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -26,10 +26,17 @@ export const catchErrorHandler =(err) =>{
     if(err.response) {
         let response    =   err.response || {};
         if(response.statusText === 'Unauthorized') {
-            window.location.href    =   '/';
+            //window.location.href    =   '/';
         } else {
             let data    =  response.data || {};
-            let message =   data.msg || 'Something went wrong';
+            let message;
+            if(!!data.msg){
+                message =   data.msg
+            }else if(!!data.error){
+                message =   data.error
+            }else {
+                message = 'Something went wrong';
+            }
             notifyError({message: message});
         }
     }

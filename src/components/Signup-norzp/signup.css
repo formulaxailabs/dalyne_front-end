@@ -58,11 +58,9 @@ overflow-y: auto
 }
 .plan-row ul {
     width: 100%;
-    justify-content: space-between;
 }
 .plan-row ul li {
     text-align: center;
-    width: 100%;
 }
 .plan-row ul li p {
     border-bottom: 1px solid #e2e2e2;
@@ -78,13 +76,13 @@ overflow-y: auto
     padding: 10px 5px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    height: 80px;
+    height: 55px;
 }
 .plan-row ul li:nth-child(1) {
-    /* width: 29%; */
+    width: 29%;
     text-align: left;
 }
-/* .plan-row ul li:nth-child(2) {
+.plan-row ul li:nth-child(2) {
     width: 18%;
 }
 .plan-row ul li:nth-child(3) {
@@ -98,12 +96,6 @@ overflow-y: auto
 }
 .plan-row ul li:nth-child(5) {
     width: 18%;
-} */
-.signup-plan .cost {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 8px;
 }
-.otp-row {
-    text-align: right;
-}
+
+

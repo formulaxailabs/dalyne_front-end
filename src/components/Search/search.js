@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import ReactTags from 'react-tag-autocomplete';
-import ReactDOM from 'react-dom';
+//import ReactTags from 'react-tag-autocomplete';
+//import ReactDOM from 'react-dom';
 import { WithContext as ReactTagInput } from 'react-tag-input';
 /* import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css"; */
@@ -8,7 +8,7 @@ import {callApi} from '../../helper/api';
 import {catchErrorHandler} from '../../helper/common';
 import CompanyPop from './company';
 import ProductPop from './product';
-import ImporterExporter from './importer-exporter';
+//import ImporterExporter from './importer-exporter';
 import moment from 'moment-timezone';
 
 export default function AdvancedSearch(props){
@@ -102,8 +102,8 @@ export default function AdvancedSearch(props){
                 let data    =   {
                     limit: 100,
                     offset: offset,
-                    start_date:   moment('01/03', 'DD/MM').format('YYYY-MM-DD'),
-                    end_date:   moment('30/04', 'DD/MM').add(1, 'years').format('YYYY-MM-DD'),
+                    start_date:   moment(start_date).format('YYYY-MM-DD'),
+                    end_date:   moment(end_date).format('YYYY-MM-DD'),
                     data_type: data_type,
                     country: country
                 }
@@ -152,7 +152,7 @@ export default function AdvancedSearch(props){
         setSelCompanies([]);
         setSelCompanyIds([]);
         setDataType('import');
-        setSearchField('product');
+        setSearchField('hs_description');
         setSearchValue([]);
         setStartDate('');
         setEndDate('');
@@ -171,7 +171,6 @@ export default function AdvancedSearch(props){
     }
 
     const applyProduct = () => {
-        //console.log(selProducts)
         setSearchValue([...selProducts]);
         setShowProduct(false);
     }
@@ -184,7 +183,6 @@ export default function AdvancedSearch(props){
 
     const onAddition    =   (tag)  =>  {
         if(search_field === 'hs_code') {
-            //console.log(tag)
             setSelProducts([...selProducts, {id : tag.id, text : tag.value, value : tag.value}]);
             setSelProductIds([...selProductIds, tag.id]);
             setSearchValue([...search_value, {id : tag.id, text : tag.value, value : tag.value}]);
@@ -193,7 +191,6 @@ export default function AdvancedSearch(props){
         }else{
             setSearchValue([...search_value, tag]);
         }
-        console.log(tag, search_field,searchTxt, 22)
     }
 
     const onDelete    =   (i)  =>  {
@@ -237,8 +234,7 @@ export default function AdvancedSearch(props){
         }
         return isError;
     }
-
-    //console.log(' selProductIds ; ', selProducts)
+    
     let error   =   validate();
     return(
         <>

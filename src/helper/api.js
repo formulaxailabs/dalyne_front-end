@@ -17,7 +17,7 @@ export function callApi(...params) {
                             };
     
     //console.log('headers : ', reqHeaders)
-    let noTokenUrls     =   ['/login/', '/plans/list/', '/signup/'];
+    let noTokenUrls     =   ['/login/', '/plans/list/', '/signup/', '/create/order/', '/capture/payment/'];
     if(!noTokenUrls.includes(url)) {
         if(!!userData.token) {
             reqHeaders.Authorization    =   "Token " + userData.token;

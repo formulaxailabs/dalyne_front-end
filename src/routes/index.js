@@ -1,10 +1,12 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { Switch, Route, Redirect } from 'react-router';
 import { useLocation } from 'react-router-dom';
 import {isEmpty} from 'lodash';
 import Login from './../components/Login';
 import Signup from './../components/Signup';
 import Dashboard from './../components/Dashboard';
+import Profile from './../components/Profile';
+import ChangePassword from './../components/Profile/change-password';
 import Search from './../components/Search';
 import User from './../components/User';
 import Home from './../components/Home';
@@ -33,6 +35,14 @@ export const routes = [{
 export const privateRoutes = [{
   path: '/dashboard',
   component: Dashboard
+},
+{
+  path: '/profile',
+  component: Profile
+},
+{
+  path: '/change-password',
+  component: ChangePassword
 },
 {
   path: '/user',
