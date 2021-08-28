@@ -25,6 +25,7 @@ export default function Search() {
     const [showDownload, setShowDownload]	=	useState(false);
     const [selIds, setSelIds]	=	useState([]);
 	const [searchData, setSearchData]	=	useState({});
+    const [searchCount, setSearchCount]   =   useState({});
     
     
     //Column Search
@@ -72,6 +73,18 @@ export default function Search() {
             catchErrorHandler(err);
         }
     }
+
+    const getSearchCountData = async (e) => {
+        try{
+            const payload = await callApi('GET', `/search/data/response/`);
+            if(payload.data) {
+				let result  =   payload.data || {};
+				setSearchCount(result);
+            }
+        } catch(err) {
+            catchErrorHandler(err);
+        }
+    }
     
     const handleSearch  =   async (data) => {
         try{
@@ -80,6 +93,7 @@ export default function Search() {
             setSearchData(data);
             const payload = await callApi('POST', `/advanced/search/data/`, data);
             if(payload.data) {
+                getSearchCountData();
                 let result   =   payload.data || {};
                 let search_id   =   result.search_id;
                 setData(result);
@@ -285,8 +299,20 @@ export default function Search() {
 
             <div className="heading-bar">
                 <div className="row">
-                    <div className="col-12">
-                        <h2>Search</h2>
+                    <div className="col-6">
+                        <h2 className="pt-1">Search</h2>
+                    </div>
+                    <div className="col-6">
+                        <div className="search-points">
+                            {
+                                !!searchCount ? 
+                                <>
+                                    <p className="remaining">Remaining Points : <strong>{searchCount.remaining_points}</strong></p>
+                                    <p>Total Points : <strong>{searchCount.total_points}</strong></p>
+                                </>
+                                : null
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

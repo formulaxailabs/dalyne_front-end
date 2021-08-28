@@ -623,3 +623,19 @@ cursor: pointer;
     font-size: 20px;
     color: #41a01a;
 }
+.search-points {
+    display: flex;
+    justify-content: flex-end;
+}
+.search-points p {
+    margin: 0 20px 0 0;
+}
+.search-points p strong {
+    font-weight: bold;
+    color: #000000;
+}
+.search-points p.remaining {
+    background: #fff4e0;
+    padding: 1px 10px 2px 10px;
+    border-radius: 12px;
+}
